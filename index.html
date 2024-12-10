@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .container input, .container textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .container button {
+            padding: 15px 30px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #16a085;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Hidden section for thank you message */
+        .thank-you {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Donate Food to Fight Hunger</h1>
+        <p>Help reduce food waste by donating your surplus food to those in need.</p>
+    </header>
+
+    <!-- Donation Form Section -->
+    <div class="container" id="donation-form">
+        <h2>Donate Now</h2>
+        <form id="donation-form" onsubmit="handleDonation(event)">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" rows="4" placeholder="Tell us about the food you're donating" required></textarea>
+            <button type="submit">Donate Now</button>
+        </form>
+    </div>
+
+    <!-- Thank You Message Section -->
+    <div class="container thank-you" id="thank-you-message">
+        <h2>Thank You for Your Donation!</h2>
+        <p>Your generous contribution helps us fight food waste and hunger. We will contact you shortly with more details.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Food Donation Project | All rights reserved.</p>
+    </footer>
+
+    <script>
+        function handleDonation(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Hide donation form
+            document.getElementById('donation-form').style.display = 'none';
+            
+            // Show thank you message
+            document.getElementById('thank-you-message').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
